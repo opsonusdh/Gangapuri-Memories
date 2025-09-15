@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gangapuri Memories</title>
+  <meta name="description" content="Gangapuri Siksha Sadan: Description, Teachers, and Information. Memory album of Gangapuri.">
+  <meta name="google-site-verification" content="8FKTyc03yLBS9rcNXZ2Qpm_7ytL4TvokgRCJfzBcz68" />
+  <link rel="icon" type="image/png" href="cropped_circle_image.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Josefin+Sans:wght@300;400;600&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+      :root {
+      --bg1: #0f172a;
+      --bg2: #0b1220;
+      --card: #0b1228AA;
+      --accent: #7c3aed;
+      --muted: #cbd5e1;
+    }
+    * { box-sizing: border-box; }
+    html,body { height:100%; }
+    body {
+      margin:0;
+      font-family:Inter, Josefin Sans, Lora, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 10%),
+                  linear-gradient(to right,var(--bg1),var(--bg2));
+      color:var(--muted);
+  -    webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    /* SPLASH */
+    .splash{
+      position:fixed;
+      left:50%; top:50%;
+      transform:translate(-50%,-50%);
+      font-weight:700;
+      font-size:3rem;
+      color:white;
+      background:linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      padding:0.6rem 1rem;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(2,6,23,0.6);
+      transition: all .75s cubic-bezier(.22,.9,.32,1);
+      z-index:40;
+      backdrop-filter: blur(6px) saturate(120%);
+    }
+    .splash.shrink{
+      left:1rem; top:1rem;
+      transform:none;
+      font-size:1.05rem;
+      padding:0.35rem 0.6rem;
+      border-radius:10px;
+    }
+
+    /* Content */
+    .content {
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:3rem 1rem 1.5rem 1rem;
+    }
+
+    /* Redirect card */
+    .redirect-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--card);
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px) saturate(120%);
+      width: 90vw;
+      text-align: center;
+      z-index: 20;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    .redirect-card h1 {
+        color:#fff;
+        margin-bottom:1rem;
+        font-family: 'Lora', serif;
+    }
+    .redirect-card p { margin-bottom:1.5rem; font-size:1.1rem; }
+
+    /* Form */
+    .form-wrap {
+      width:100%;
+      max-width:640px;
+      opacity:0;
+      transform:translateY(20px) scale(0.995);
+      pointer-events:none;
+      transition: opacity .6s ease .05s, transform .6s cubic-bezier(.2,.8,.2,1) .05s;
+      text-align: left;
+    }
+    .form-wrap.visible {
+      opacity:1;
+      transform:translateY(0) scale(1);
+      pointer-events:auto;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:1.6rem;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+      color:var(--muted);
+    }
+    h2 { margin:0 0 0.6rem 0; color:#fff; }
+    p.lead { margin:0 0 1rem 0; font-size:0.95rem; }
+    form { display:grid; gap:0.85rem; }
+    label { font-size:0.85rem; color:#cbd5e1; }
+    input[type="text"], input[type="class"], input[type="password"], textarea {
+      width:100%;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.03);
+      padding:0.7rem 0.8rem;
+      border-radius:8px;
+      color:var(--muted);
+      font-size:0.95rem;
+      outline:none;
+    }
+    input:focus, textarea:focus {
+      box-shadow:0 6px 18px rgba(124,58,237,0.08);
+      border-color:rgba(124,58,237,0.4);
+    }
+    .row { display:flex; gap:0.7rem; }
+    .row > * { flex:1; }
+    .btn {
+  background:linear-gradient(90deg,var(--accent), #4f46e5);
+      color:white;
+      padding:0.65rem 1rem;
+      border-radius:10px;
+      border:none;
+      cursor:pointer;
+      font-weight:600;
+      font-size:0.95rem;
+      box-shadow:0 8px 20px rgba(76,29,149,0.18);
+    }
+    .small { font-size:0.85rem; color:rgba(203,213,225,0.7); }
+    input[type="password"] { font-family: monospace; font-size:80%; }
+
+    /* Responsiveness */
+    @media (max-width:520px){
+      .splash{font-size:1.05rem; padding:0.35rem 0.6rem}
+      .card{padding:1.1rem}
+    }
+  </style>
+</head>
+<body>
+  <!-- Splash logo -->
+  <header class="splash" aria-hidden="true">SDH Creation</header>
+
+  <main class="content" role="main">
+    <!-- Redirect card -->
+    <div class="card redirect-card" id="redirectCard" style="display:none;">
+      <h1 id="redirectTitle">Please Wait...</h1>
+      <p id="redirectMsg">Connecting to the server of <br><b>Gangapuri Memories</b>.</p>
+    </div>
+
+    <!-- Verification form -->
+    <div class="form-wrap" id="formWrap" aria-hidden="true">
+      <div class="card">
+        <h2>Gangapuri Memories</h2>
+        <p class="lead">Verifying you as a Gangapuri Student</p>
+        <form id="contactForm">
+          <div class="row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            
+            <div>
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="******" required>
+            </div>
+          </div>
+          <div>
+            <label for="class">Class and role</label>
+            <input id="class" name="class" type="text" placeholder="XI-SCIENCE 03">
+          </div>
+          <div>
+            <label for="q1">We call our head sir Head ____ (fill the blank):</label>
+            <input id="q1" name="q1" type="text" placeholder="e.g., babar chele">
+          </div>
+          <div>
+            <label for="q2">A Teacher whose name is related to Gutkha:</label>
+            <input id="q2" name="q2" type="text" placeholder="e.g., Sanjay">
+          </div>
+          <div>
+            <label for="q3">Our respected transgender Sir:</label>
+            <input id="q3" name="q3" type="text" placeholder="e.g., Shyamal">
+          </div>
+          <div>
+            <label for="q4">Our most Tharki Teacher:</label>
+            <input id="q4" name="q4" type="text" placeholder="e.g., Debronjon">
+          </div>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.4rem;">
+            <span class="small" style="max-width:11rem">Sudden happening makes a day memorable</span>
+            <button class="btn" type="submit">Verify</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const _0x8d1a = function(_0x4b5c,_0x6e7f){
+        return _0x4b5c.toString(2).padStart(_0x6e7f*8,'0');
+    };
+    let _0x6a8 = "404";
+
+    const splash = document.querySelector('.splash');
+    const formWrap = document.getElementById('formWrap');
+    const redirectCard = document.getElementById('redirectCard');
+    const _0x83k = _0x8d1a(3759436985488454736722151893104n, 13);
+    const redirectTitle = document.getElementById('redirectTitle');
+    const redirectMsg = document.getElementById('redirectMsg');
+    const _0x93d2 = _0x8d1a(874878668209169921133n, 9);
+    const redirectLink = document.getElementById('redirectLink');
+
+    function isValidURL(text) {
+      try { new URL(text); return true; } catch { return false; }
+    }
+
+    const _0x5a3b = function(_0x6c7d){
+      return _0x6c7d.match(/.{1,8}/g).map(_0x2b3c=>String.fromCharCode(parseInt(_0x2b3c,2))).join('');
+    };
+      
+    function showDownMessage(x) {
+      redirectTitle.textContent = x;
+      redirectMsg.innerHTML = "Server is Currently Down<br>Please Try after Some Time";
+    }
+
+    const _0x7c8d = _0x8d1a(8791151658256312720280233394775240863728681738467569222013015315749136809180080751059402628443976931550528404266423780670400554177155941163151411610200687144360874377180699968287604228635233051105672766757467879540n, 89);
+    const _0x9d0e = _0x5a3b(_0x7c8d);
+
+    async function loadURL() {
+
+      try {
+        const res = await fetch(_0x9d0e + "?t=" + Date.now());
+        if (res.ok) _0x6a8 = (await res.text()).trim();
+      } catch { _0x6a8 = "404"; }
+
+  if (!_0x6a8) return showDownMessage("404");
+  if (!isValidURL(_0x6a8)) return showDownMessage(_0x6a8);
+
+  try {
+    const check = await fetch(_0x6a8 + _0x5a3b(_0x83k), { method: "GET" });
+    if (check.status === 200) {
+      redirectCard.style.display = "none";
+      formWrap.classList.add('visible');
+      formWrap.setAttribute('aria-hidden', 'false');
+    } else {
+      showDownMessage(check.status);
+    }
+  } catch (err) {
+    showDownMessage(err);
+  }
+}
+
+(function init() {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function startRedirectCheck() {
+    redirectCard.style.display = "block";
+    loadURL();
+    setInterval(loadURL, 5000);
+  }
+
+  if (reduced) {
+    splash.classList.add('shrink');
+    startRedirectCheck();
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(() => splash.classList.add('shrink'), 1500);
+      setTimeout(startRedirectCheck, 2000);
+    });
+  }
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const btn = this.querySelector('button, .btn');
+  btn.disabled = true;
+  btn.textContent = 'Verifying...';
+
+  const formData = new FormData(this);
+
+  
+  fetch(_0x6a8+_0x5a3b(_0x83k), {
+    method: "POST",
+    body: formData
+  })
+    
+  .then(res => res.text().then(text => ({ ok: res.ok, status: res.status, text })))
+  .then(({ ok, status, text }) => {
+    try {
+      const data = JSON.parse(text);
+      return data;
+    } catch (err) {
+      console.error("Invalid JSON from server (status " + status + "):", text);
+      throw new Error("Invalid JSON from server");
+    }
+  })
+  .then(data => {
+    btn.disabled = false;
+    btn.textContent = 'Verify';
+
+    if (data.success) {
+          window.location = _0x6a8 || "https://opsonusdh.github.io/gangapuri";
+          return;
+        }
+
+        
+        const msg = [
+          "Sorry, we can't verify you as a Gangapuri Student.",
+          "Reason: " + (data.reason || "Unknown error."),
+          "Message: "+data.message || "N/A",
+          "",
+          "Need help? Open the GitHub guide?"
+            ].join("\n");
+        
+        if (confirm(msg)) {
+          window.open ("https://github.com/opsonusdh/gangapuri/", "_blank", "noopener");
+        }
+      })
+      .catch(err => {
+        console.error("Fetch error:", err);
+        btn.disabled = false;
+        btn.textContent = 'Verify';
+        alert("Server error: " + (err.message || "Unknown error. Check console for details."));
+      });
+    });
+    })();
+  </script>
+</body>
+</html>
