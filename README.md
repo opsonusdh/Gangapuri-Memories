@@ -12,7 +12,7 @@ Outsiders won’t get the jokes, won’t guess the hints, and definitely won’t
 
 ### 🔗 Portal
 
-👉 https://opsonusdh.github.io/gangapuri
+👉 https://opsonusdh.github.io/Gangapuri-Memories/
 
 
 
