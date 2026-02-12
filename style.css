@@ -28,7 +28,7 @@
   }
 }
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{min-height:100%}
     body{
       margin:0;
       font-family: 'Josefin Sans', sans-serif;
@@ -72,7 +72,7 @@
     .container {
       max-width: 90vw;
       margin: 2rem auto 2rem 0.25rem;
-      min-height: 95vh;
+      min-height: 80vh;
     }
 
     details {
