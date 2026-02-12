@@ -15,16 +15,16 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg1: #e0e5e9;
-    --bg2: #f4f7fa;
-    --card: #ffffffcc;
-    --accent: #004e64;
-    --accent-light: #0a6c86;
-    --accent-soft: #cde7ef;
-    --text: #0f172a;
-    --muted: #5f6b7a;
-    --border: #c7d2da;
-    --notready: rgba(0, 78, 100, 0.25);
+    --bg1: #004e6f;
+    --bg2: #759cbd;
+    --card: #247da3;
+    --accent: #0bbfaa;
+    --accent-light: #5bb3a0;
+    --accent-soft: #57c5d9;
+    --text: #e2e8f0;
+    --muted: #cbd5e1;
+    --border: #1e3b3a;
+    --notready: rgba(85, 201, 255, 0.5);
   }
 }
     *{box-sizing:border-box}
@@ -42,6 +42,7 @@
     h1, h2, h3 {
   font-family: 'Lora', serif;
     }
+    
 
     /* Splash header */
     .splash{
@@ -69,8 +70,9 @@
 
     /* Collapsible student/teacher blocks */
     .container {
-      max-width: 800px;
+      max-width: 90vw;
       margin: 2rem auto 2rem 0.25rem;
+      height: 95vh;
     }
 
     details {
@@ -115,8 +117,8 @@ figcaption {
   font-style: italic;
 }
 footer{
-    background: var(--card);
-  padding: 1.5rem 2rem;
+  background: var(--card);
+  padding: 1rem 1.5rem;
   color: var(--muted);
   font-family: 'Inter', sans-serif;
   max-width: 800px;
@@ -124,7 +126,25 @@ footer{
   border-radius: 8px;
   margin: 3rem auto;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex; 
+  font-size: 0.9rem; 
+  gap: 1rem;
+  align-items: center;
 }
+footer span{
+  max-width: 50%;
+  padding: 0;
+  margin: 0;
+}
+#copyright{
+  line-height: 1.2rem;
+}
+#apology{
+  color: var(--accent);
+}
+
+
+
 form{
     display: flex; 
     flex-direction: column;         
@@ -168,18 +188,7 @@ button.ready {
 button.ready:hover {
     background-color: rgba(124, 58, 237, 0.8);
 }
-#footer{
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    font-size: 0.9rem; 
-    color: var(--muted);
-}
-#Ig{
-    color: var(--accent); 
-    text-decoration: none; 
-    font-weight: 600;
-}
+
   .hint {
     border-bottom: 1px dashed #888;
     cursor: pointer;
@@ -232,4 +241,7 @@ img, video{
 }
 li {
     margin:1rem 0rem;
+}
+.wrapper{
+  width: 90vw;
 }
