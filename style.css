@@ -72,7 +72,7 @@
     .container {
       max-width: 90vw;
       margin: 2rem auto 2rem 0.25rem;
-      height: 95vh;
+      min-height: 95vh;
     }
 
     details {
