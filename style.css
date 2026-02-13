@@ -247,6 +247,7 @@ a {
 }
 img, video{
     max-width: 80vw;
+    width: 100%;
     border-radius: 5px;
 }
 li {
