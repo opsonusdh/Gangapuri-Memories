@@ -85,5 +85,5 @@ function remove_loading() {
 window.onload = function () { 
     show_hints();
     play_videos();
-    remove_loading();
+    setTimeout(remove_loading, 1000);
 };
