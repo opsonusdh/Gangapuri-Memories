@@ -42,15 +42,16 @@
     h2, h3 {
       font-family: 'Lora', serif;
     }
-    h3{
+    h1{
       font-family: 'Cookie', cursive;
       font-size: 2rem;
+      margin: 4rem auto 2rem;
     }
     
 
     /* Splash header */
     .splash{
-      position:fixed;
+      positiposition;
       left:50%;
       top:50%;
       transform:translate(-50%,-50%);
