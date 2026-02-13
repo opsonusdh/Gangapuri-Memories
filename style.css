@@ -39,8 +39,12 @@
       flex-direction:column;
       padding: 1rem;
     }
-    h1, h2, h3 {
-  font-family: 'Cookie', 'Lora', serif;
+    h2, h3 {
+      font-family: 'Lora', serif;
+    }
+    h3{
+      font-family: 'Cookie', cursive;
+      font-size: 2rem;
     }
     
 
