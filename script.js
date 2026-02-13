@@ -76,7 +76,14 @@ function play_videos(){
     });
 }
   
+function remove_loading() {
+  document.querySelector("h1").style.filter = "none";
+  document.querySelector("footer").style.filter = "none";
+  document.querySelector(".container").style.filter = "none";
+  document.querySelector(".splash").classList.add("shrink");
+}
 window.onload = function () { 
     show_hints();
     play_videos();
+    remove_loading();
 };
