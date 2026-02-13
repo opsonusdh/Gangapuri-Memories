@@ -17,25 +17,6 @@ Outsiders won’t get the jokes, won’t guess the hints, and definitely won’t
 
 
 
-### 🔑 Password Hints
-
-You thought it’d be easy? Nah. Gangapuri secrets are locked in code and chaos.
-
-1. We say: Tapan ___ -er chele.
-
-
-2. Think of the teacher whose name is: “Bolo zuban kesri.”
-
-
-3. The Math sir with a chest so big, you could rest your homework on it.
-
-
-4. The Geography sir who smiled more in the staffroom than in class in front of female teachers.
-
-
-
-
-
 ### 📖 About This Place
 
 This is not just a website. It’s a time machine.
