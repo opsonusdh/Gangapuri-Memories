@@ -79,6 +79,7 @@ function play_videos(){
 function remove_loading() {
   document.querySelector("h1").style.filter = "none";
   document.querySelector("footer").style.filter = "none";
+  document.querySelector("#card-3d").style.filter = "none";
   document.querySelector(".container").style.filter = "none";
   document.querySelector(".splash").classList.add("shrink");
 }
@@ -87,3 +88,5 @@ window.onload = function () {
     play_videos();
     setTimeout(remove_loading, 1000);
 };
+
+
