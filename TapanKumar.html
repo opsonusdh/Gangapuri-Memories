@@ -1,10 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page title</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tapan Kumar Podder - Gangapuri Memories</title>
+  <meta name="description" content="Full profile of Tapan Kumar Podder from Gangapuri Siksha Sadan, created by students.">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" href="cropped_circle_image.png">
+  <link rel="apple-touch-icon" type="image/png" href="cropped_circle_image.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Josefin+Sans:wght@300;400;600&family=Lora:wght@400;500;700&family=Cookie:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @import "style.css";
+  </style>
 </head>
 <body>
-    <h1 style="font-size: 4rem; display: block; text-align: center">NOTHING TO SEE HERE YET</h1>
+  <script src="script.js"></script>
+  <script>
+    /* Safe override — teacher pages have no #card-3d */
+    remove_loading = function () {
+      ['h1', 'footer', '.container'].forEach(function(sel) {
+        var el = document.querySelector(sel);
+        if (el) el.style.filter = 'none';
+      });
+      var splash = document.querySelector('.splash');
+      if (splash) splash.classList.add('shrink');
+    };
+  </script>
+
+  <header class="splash">SDH Creation</header>
+  <h1><b><u>Tapan Kumar Podder</u></b></h1>
+
+  <div class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Memories</a>
+
+    <!-- ===== PROFILE CARD ===== -->
+    <div class="teacher-profile-card">
+      <img src="Data/330617.jpeg" alt="Tapan Kumar Podder" class="teacher-photo">
+      <div class="teacher-card-info">
+        <h2>Tapan Kumar Podder</h2>
+        <div class="card-row">
+          <span class="card-label">DOB</span>
+          <span class="card-value">N/A</span>
+        </div>
+        <div class="card-row">
+          <span class="card-label">At Gangapuri</span>
+          <span class="card-value">N/A</span>
+        </div>
+        <p class="teacher-quote">&#8220;N/A&#8221;</p>
+      </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <details class="wrapper" open>
+      <summary>Tapan Kumar Podder</summary>
+      <div class="content">
+
+        <p>Our head sir, Tapan Kumar Podder&#8212; the most beautiful, elegant, peaceful, thoughtful, handful ruler (and yes, &#8220;ruler&#8221; is not a typo) &#8212; carries himself like a saint but treats students like they&#8217;re auditioning for a prison documentary.</p>
+        <figure>
+          <img src="Data/330617.jpeg" alt="Tapan Kumar Podder">
+          <figcaption>Tapan Kumar Podder - <span class="hint">Banglar Siksha<span class="hint-box"><a href="https://school.banglarshiksha.gov.in/ws/website/index/19170111712">Visit</a></span></span></figcaption>
+        </figure>
+        <p>His catchphrase, &#8220;ai aaste,&#8221; drifts through the corridors daily, possibly even making guest appearances in his private life with his wife.</p>
+        <figure>
+          <img src="Data/IMG_20250814_105457.jpg" alt="Tapan Kumar Podder">
+          <figcaption>Head Sir at Balcony - <span class="hint">Soumojit<span class="hint-box"><a href="https://www.instagram.com/btz.ist.soumojit/">Visit Soumojit on Instagram</a></span></span></figcaption>
+        </figure>
+        <p>He&#8217;s famous for his compulsory &#8220;donations&#8221; of &#8377;100 per student to fix the hallroom roof &#8212; a project that&#8217;s been under construction longer than our syllabus.</p>
+        <figure>
+          <img src="Data/IMG_20250817_215943.jpg" alt="Tapan Kumar Poddar">
+          <figcaption>WhatsApp stickers - <span class="hint">Aditya<span class="hint-box"><a href="https://www.instagram.com/aditya_gupta4980/">Visit Aditya on Instagram</a></span></span></figcaption>
+        </figure>
+        <p>Spot a student wearing bracelet? He&#8217;ll snatch them instantly, only for them to find a second life at his home, gifted to his son.<br>
+        Among ourselves, we call him by names not found in the official school register: &#8220;head khankir chele&#8221; and &#8220;bohen ka laura.&#8221;</p>
+        <p>He is the school&#8217;s very own wandering spirit. He roams the corridors like a ghost in broad daylight &#8212; see him on the 1st floor telling you to &#8220;go to class,&#8221; and by the time you drag yourself to the 3rd floor, boom &#8212; he&#8217;s already there, giving you the same order. Students swear he exists in a quantum superposition, being everywhere at once. That&#8217;s why we lovingly (and fearfully) refer to him as &#8220;Otripto Aantma&#8221; &#8212; the restless soul who&#8217;ll forever haunt you until you reach your classroom.</p>
+        <figure>
+          <img src="Data/IMG_20250830_100606.jpg" alt="Tapan Kumar Podder and Hitler Poddar sticker">
+          <figcaption>Sticker of Tapan Kumar Podder &amp; Hitler Poddar based on Real Life Incident - <span class="hint">Subhradeep<span class="hint-box"><a href="https://www.instagram.com/they_hate_subho__">Visit Subhradeep on Instagram</a></span></span></figcaption>
+        </figure>
+
+      </div>
+    </details>
+
+  </div>
+
+  <footer>
+    <span id="apology">Dear teachers, if you&#8217;re reading this, please forgive us! We have great respect for you!</span>
+    <span id="copyright">&#169; 2026<br>SDH Creation.<br>All rights reserved.</span>
+  </footer>
 </body>
 </html>

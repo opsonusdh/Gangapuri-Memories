@@ -1,10 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page title</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chittaranjan Mondal - Gangapuri Memories</title>
+  <meta name="description" content="Full profile of Chittaranjan Mondal from Gangapuri Siksha Sadan, created by students.">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" href="cropped_circle_image.png">
+  <link rel="apple-touch-icon" type="image/png" href="cropped_circle_image.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Josefin+Sans:wght@300;400;600&family=Lora:wght@400;500;700&family=Cookie:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @import "style.css";
+  </style>
 </head>
 <body>
-    <h1 style="font-size: 4rem; display: block; text-align: center">NOTHING TO SEE HERE YET</h1>
+  <script src="script.js"></script>
+  <script>
+    /* Safe override — teacher pages have no #card-3d */
+    remove_loading = function () {
+      ['h1', 'footer', '.container'].forEach(function(sel) {
+        var el = document.querySelector(sel);
+        if (el) el.style.filter = 'none';
+      });
+      var splash = document.querySelector('.splash');
+      if (splash) splash.classList.add('shrink');
+    };
+  </script>
+
+  <header class="splash">SDH Creation</header>
+  <h1><b><u>Chittaranjan Mondal</u></b></h1>
+
+  <div class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Memories</a>
+
+    <!-- ===== PROFILE CARD ===== -->
+    <div class="teacher-profile-card">
+      <img src="Data/IMG-20250818-WA0003.jpg" alt="Chittaranjan Mondal" class="teacher-photo">
+      <div class="teacher-card-info">
+        <h2>Chittaranjan Mondal</h2>
+        <div class="card-row">
+          <span class="card-label">DOB</span>
+          <span class="card-value">N/A</span>
+        </div>
+        <div class="card-row">
+          <span class="card-label">At Gangapuri</span>
+          <span class="card-value">N/A</span>
+        </div>
+        <p class="teacher-quote">&#8220;N/A&#8221;</p>
+      </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <details class="wrapper" open>
+      <summary>Chittaranjan Mondal</summary>
+      <div class="content">
+
+        <p>Chittaranjan Mondal &#8212; one of the rare gems in Gangapuri Siksha Sadan who actually knows how to teach. Respected, calm, and helpful&#8230; but with enough quirks to keep the class entertained without him even trying. He comes straight from the Sundarbans, and his accent is the stuff of legend. When math hits &#8220;whole square,&#8221; he proudly delivers it as <i>&#8220;whholo square&#8221;</i> &#8212; and just like that, the name sticks forever.</p>
+        <figure>
+          <img src="Data/IMG-20250818-WA0003.jpg" alt="Chittaranjan Mondal">
+          <figcaption>Chittaranjan Mondal - <span class="hint">Akashdip<span class="hint-box"><a href="https://www.instagram.com/mandalakashdip2024/">Visit Akashdip on Instagram</a></span></span></figcaption>
+        </figure>
+        <p>His teaching comes with a bonus feature: live casino betting. Picture this &#8212; he&#8217;s writing on the board, suddenly freezes mid-equation, and then turns back dramatically to look at us, like he just unlocked a secret of the universe. The students? Already betting money, chocolates, and pens on &#8220;Will he turn now?&#8221; It&#8217;s suspense at its finest, and that&#8217;s exactly why we call him <i>&#8220;Suspence Sir.&#8221;</i></p>
+        <figure>
+          <video controls controlslist="nodownload" preload="none" src="Data/VID-20250818-WA0007~2.mp4" poster="Data/IMG_20250816_094620.jpg"></video>
+          <figcaption>Chittaranjan is teaching Math<br>- <span class="hint">Rohan<span class="hint-box"><a href="https://www.instagram.com/its_your_rohan_7347/">Visit Rohan on Instagram</a></span></span></figcaption>
+        </figure>
+        <p>But credit where credit&#8217;s due: when exams loom like doomsday, he&#8217;s the one who slips us the golden cheat code &#8212; suggestions. While others just torture us with syllabus, Suspence Sir hands us a survival guide. It&#8217;s not just help, it&#8217;s salvation.</p>
+        <p>So between &#8220;Whholo Square&#8221; chants and suspenseful mid-turns, he&#8217;s earned two eternal nicknames: &#8220;Suspence&#8221; and &#8220;Whholo Square.&#8221; Both equally iconic, both equally him.</p>
+
+      </div>
+    </details>
+
+  </div>
+
+  <footer>
+    <span id="apology">Dear teachers, if you&#8217;re reading this, please forgive us! We have great respect for you!</span>
+    <span id="copyright">&#169; 2026<br>SDH Creation.<br>All rights reserved.</span>
+  </footer>
 </body>
 </html>

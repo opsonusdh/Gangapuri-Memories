@@ -1,10 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page title</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Samarjit Mondal - Gangapuri Memories</title>
+  <meta name="description" content="Full profile of Samarjit Mondal from Gangapuri Siksha Sadan, created by students.">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" href="cropped_circle_image.png">
+  <link rel="apple-touch-icon" type="image/png" href="cropped_circle_image.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Josefin+Sans:wght@300;400;600&family=Lora:wght@400;500;700&family=Cookie:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @import "style.css";
+  </style>
 </head>
 <body>
-    <h1 style="font-size: 4rem; display: block; text-align: center">NOTHING TO SEE HERE YET</h1>
+  <script src="script.js"></script>
+  <script>
+    /* Safe override — teacher pages have no #card-3d */
+    remove_loading = function () {
+      ['h1', 'footer', '.container'].forEach(function(sel) {
+        var el = document.querySelector(sel);
+        if (el) el.style.filter = 'none';
+      });
+      var splash = document.querySelector('.splash');
+      if (splash) splash.classList.add('shrink');
+    };
+  </script>
+
+  <header class="splash">SDH Creation</header>
+  <h1><b><u>Samarjit Mondal</u></b></h1>
+
+  <div class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Memories</a>
+
+    <!-- ===== PROFILE CARD ===== -->
+    <div class="teacher-profile-card">
+      <img src="Data/IMG_20250827_164556.jpg" alt="Samarjit Mondal" class="teacher-photo">
+      <div class="teacher-card-info">
+        <h2>Samarjit Mondal</h2>
+        <div class="card-row">
+          <span class="card-label">DOB</span>
+          <span class="card-value">N/A</span>
+        </div>
+        <div class="card-row">
+          <span class="card-label">At Gangapuri</span>
+          <span class="card-value">N/A</span>
+        </div>
+        <p class="teacher-quote">&#8220;N/A&#8221;</p>
+      </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <details class="wrapper" open>
+      <summary>Samarjit Mondal</summary>
+      <div class="content">
+
+        <p>Samarjit Mondal &#8212; chemistry teacher, zero filter. One moment he&#8217;s explaining bonds, the next he&#8217;s warning: &#8220;Be safe, too many gays and lesbians around us.&#8221;</p>
+        <figure>
+          <img src="Data/IMG_20250827_164556.jpg" alt="Samarjit Mondal">
+          <figcaption>Samarjit Mondal - <span class="hint">Subhradeep<span class="hint-box"><a href="https://www.instagram.com/they_hate_subho__">Visit Subhradeep on Instagram</a></span></span></figcaption>
+        </figure>
+        <figure>
+          <img src="Data/739527.jpeg" alt="Chemistry Lab">
+          <figcaption>Chemistry Lab and Samarjit Mondal (looking like a robot) - <span class="hint">Banglar Siksha<span class="hint-box"><a href="https://school.banglarshiksha.gov.in/ws/website/index/19170111712">Visit</a></span></span></figcaption>
+        </figure>
+        <p>Students don&#8217;t know whether to laugh, cry, or check if this is still a chemistry class. For him, bonding seems to exist only in the &#8220;straight&#8221; version.</p>
+        <p>Result? He teaches reactions on paper, but triggers way bigger ones in real life.</p>
+
+      </div>
+    </details>
+
+  </div>
+
+  <footer>
+    <span id="apology">Dear teachers, if you&#8217;re reading this, please forgive us! We have great respect for you!</span>
+    <span id="copyright">&#169; 2026<br>SDH Creation.<br>All rights reserved.</span>
+  </footer>
 </body>
 </html>

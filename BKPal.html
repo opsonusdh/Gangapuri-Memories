@@ -1,10 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page title</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bimal Kumar Pal - Gangapuri Memories</title>
+  <meta name="description" content="Full profile of Bimal Kumar Pal from Gangapuri Siksha Sadan, created by students.">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" href="cropped_circle_image.png">
+  <link rel="apple-touch-icon" type="image/png" href="cropped_circle_image.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Josefin+Sans:wght@300;400;600&family=Lora:wght@400;500;700&family=Cookie:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    @import "style.css";
+  </style>
 </head>
 <body>
-    <h1 style="font-size: 4rem; display: block; text-align: center">NOTHING TO SEE HERE YET</h1>
+  <script src="script.js"></script>
+  <script>
+    /* Safe override — teacher pages have no #card-3d */
+    remove_loading = function () {
+      ['h1', 'footer', '.container'].forEach(function(sel) {
+        var el = document.querySelector(sel);
+        if (el) el.style.filter = 'none';
+      });
+      var splash = document.querySelector('.splash');
+      if (splash) splash.classList.add('shrink');
+    };
+  </script>
+
+  <header class="splash">SDH Creation</header>
+  <h1><b><u>Bimal Kumar Pal</u></b></h1>
+
+  <div class="container">
+    <a href="index.html" class="back-link">&#8592; Back to Memories</a>
+
+    <!-- ===== PROFILE CARD ===== -->
+    <div class="teacher-profile-card">
+      <img src="Data/698746.jpg" alt="Bimal Kumar Pal" class="teacher-photo">
+      <div class="teacher-card-info">
+        <h2>Bimal Kumar Pal</h2>
+        <div class="card-row">
+          <span class="card-label">DOB</span>
+          <span class="card-value">N/A</span>
+        </div>
+        <div class="card-row">
+          <span class="card-label">At Gangapuri</span>
+          <span class="card-value">N/A</span>
+        </div>
+        <p class="teacher-quote">&#8220;N/A&#8221;</p>
+      </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <details class="wrapper" open>
+      <summary>Bimal Kumar Pal</summary>
+      <div class="content">
+
+        <p>Bimal Sir &#8212; officially <span class="hint">Bimal Kumar Pal<span class="hint-box"><a href="https://www.facebook.com/share/1B2vTzMFP7/">Visit Bimal Kumar Pal on Facebook</a></span></span>, unofficially the Sigma male of Gangapuri Siksha Sadan. He walks into class with that &#8220;I don&#8217;t care&#8221; energy and runs it like his personal podcast. No hesitation, no filter &#8212; he&#8217;ll slang his own family members right in front of the entire class like it&#8217;s open mic night, and we&#8217;ll just sit there wondering whether to laugh, clap, or take notes.</p>
+        <figure>
+          <img src="Data/698746.jpg" alt="Bimal Kumar Pal">
+          <figcaption>Bimal Kumar Pal (wearing glasses) - <span class="hint">Banglar Siksha<span class="hint-box"><a href="https://school.banglarshiksha.gov.in/ws/website/index/19170111712">Visit</a></span></span></figcaption>
+        </figure>
+        <p>What makes him scarier (and funnier) is his sixth sense. He can dive straight into a student&#8217;s mind and instantly detect every ounce of mischief brewing there. The problem? He can also out-mischief us when he wants. Imagine a teacher who knows your prank before you even attempt it &#8212; that&#8217;s Bimal Sir, the ultimate troll master in disguise, and probably the only one who can make us feel outsmarted at our own game.</p>
+        <figure>
+          <img src="Data/IMG_20250826_150041.jpg" alt="Bimal Kumar Pal">
+          <figcaption>Sticker - <span class="hint">Soumojit<span class="hint-box"><a href="https://www.instagram.com/btz.ist.soumojit/">Visit Soumojit on Instagram</a></span></span></figcaption>
+        </figure>
+        <p>And then, of course, there&#8217;s the smoking saga. Yes, the rumors are true &#8212; we caught him. The man&#8217;s as unapologetic about lighting up as he is about roasting his own relatives mid-class. If there were ever an Olympic category for &#8220;smoking with confidence,&#8221; Bimal Sir would bring the gold straight home to Gangapuri.</p>
+        <figure>
+          <video controls controlslist="nodownload" preload="none" src="Data/VID-20250801-WA0022.mp4" poster="Data/IMG_20250816_094620.jpg"></video>
+          <figcaption>Bimal Smoking in the Balcony - <span class="hint">Soumojit<span class="hint-box"><a href="https://www.instagram.com/btz.ist.soumojit/">Visit Soumojit on Instagram</a></span></span></figcaption>
+        </figure>
+        <p>In short, he&#8217;s more than just a teacher &#8212; he&#8217;s a performer, a mind-reader, and a certified sigma legend. Among ourselves, we toss around nicknames like &#8220;Smoke Guru&#8221; and &#8220;Sigma Pal,&#8221; but deep down we know he&#8217;s carved a place in school lore that no one else could match.</p>
+
+      </div>
+    </details>
+
+  </div>
+
+  <footer>
+    <span id="apology">Dear teachers, if you&#8217;re reading this, please forgive us! We have great respect for you!</span>
+    <span id="copyright">&#169; 2026<br>SDH Creation.<br>All rights reserved.</span>
+  </footer>
 </body>
 </html>
