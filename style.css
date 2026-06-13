@@ -1,5 +1,3 @@
-/* ===== COLOUR PALETTE (untouched) ===== */
-
 @media (prefers-color-scheme: dark) {
   :root {
     --bg1: #0f172a;
@@ -29,127 +27,119 @@
     --notready: rgba(85, 201, 255, 0.5);
   }
 }
-    *{box-sizing:border-box;}
-    html,body{min-height:100%;}
-    body{
-      margin:0;
-      font-family: 'Josefin Sans', sans-serif;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 10%), linear-gradient(to right,var(--bg1),var(--bg2));
-      color:var(--muted);
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      padding: 1rem;
-    }
-    h2, h3 {
-      font-family: 'Lora', serif;
-    }
-    h1{
-      font-family: 'Cookie', cursive;
-      font-size: 2rem;
-      margin: 4rem auto 2rem auto;
-    }
+*{box-sizing:border-box;}
+html,body{min-height:100%;}
+body{
+  margin:0;
+  font-family: 'Josefin Sans', sans-serif;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 10%), linear-gradient(to right,var(--bg1),var(--bg2));
+  color:var(--muted);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  padding: 1rem;
+}
+h2, h3 {
+  font-family: 'Lora', serif;
+}
+h1{
+  font-family: 'Cookie', cursive;
+  font-size: 2rem;
+  margin: 4rem auto 2rem auto;
+}
     
 
-    /* Splash header */
-    .splash{
-      position: fixed;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%);
-      font-weight:700;
-      font-size:clamp(1rem, 10vw, 5rem);
-      white-space: nowrap;
-      color:white;
-      background:linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-      padding:0.6rem 1rem;
-      border-radius:12px;
-      box-shadow:0 10px 30px rgba(2,6,23,0.6);
-      backdrop-filter: blur(6px) saturate(120%);
-      z-index:40;
-      transition: all 0.2s ease;
-    }
-    .splash.shrink{
-      left:1rem;
-      top:1rem;
-      transform:none;
-      font-size:1.05rem;
-      padding:0.35rem 0.6rem;
-    }
+/* Splash header */
+.splash{
+  position: fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  font-weight:700;
+  font-size:clamp(1rem, 10vw, 5rem);
+  white-space: nowrap;
+  color:white;
+  background:linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  padding:0.6rem 1rem;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.6);
+  backdrop-filter: blur(6px) saturate(120%);
+  z-index:40;
+  transition: all 0.2s ease;
+}
+.splash.shrink{
+  left:1rem;
+  top:1rem;
+  transform:none;
+  font-size:1.05rem;
+  padding:0.35rem 0.6rem;
+}
 
-    /* Collapsible student/teacher blocks */
-    
-    /* See Mores Css*/
-    .SeeMores{
-      font-size: 1.0rem;
-      font-family: Roman;
-      text-decoration-thickness: 3px;
-      display: block;
-      text-align: center;
-      cursor: pointer;
-      transition: filter 0.3s ease;
-      
-  background: linear-gradient(135deg, #43D9EA, #ffffff);
+.SeeMores {
+  background: linear-gradient(
+    135deg,
+    var(--accent-light),
+    #fff,
+    var(--accent-light)
+  );
+
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  text-shadow: none; /* text-shadow doesn't work with transparent fill */
-  filter: drop-shadow(0 0 10px rgba(135, 206, 235, 0.9))
-          drop-shadow(0 0 22px rgba(135, 206, 235, 0.6))
-          drop-shadow(0 0 44px rgba(135, 206, 235, 0.3));
+  transition:
+    background-position 0.5s ease,
+    transform 0.5s ease;
 }
 
-.SeeMores:hover{
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 10px rgba(135, 206, 235, 1))
-          drop-shadow(0 0 25px rgba(135, 206, 235, 0.8))
-          drop-shadow(0 0 50px rgba(135, 206, 235, 0.5));
+.SeeMores:hover {
+  background-position: 80% 50%;
+  transform: scale(1.05);
 }
     
-    
 
-    .container {
-      max-width: 90vw;
-      margin: 2rem auto 2rem 0.25rem;
-      min-height: 80vh;
-    }
-    h1, .container, footer {
-      filter: blur(5px);
-    }
+.container {
+  max-width: 90vw;
+  margin: 2rem auto 2rem 0.25rem;
+  min-height: 80vh;
+}
+h1, .container, footer {
+  filter: blur(5px);
+}
 
-    details {
-      background: var(--card);
-      border-radius: 8px;
-      margin-bottom: 12px;
-      padding: 10px 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
+details {
+  background: var(--card);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
-    summary {
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: #fff;
-    }
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+}
 
-    summary:active {
-      color: var(--accent);
-    }
+summary:active {
+  color: var(--accent);
+}
 
-    .content {
-      margin-top: 10px;
-      color: var(--muted);
-    }
+.content {
+  margin-top: 10px;
+  color: var(--muted);
+}
 
-    .content img, 
-    .content video {
-      max-width: 100%;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
-
-/* ===== GLOBAL RESET & BASE ===== */
+.content img, 
+.content video {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+}
 
 * {
   box-sizing: border-box;
@@ -181,8 +171,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== TYPOGRAPHY ===== */
-
 h2, h3 {
   font-family: 'Lora', serif;
 }
@@ -193,8 +181,6 @@ h1 {
   margin: 4rem auto 2rem auto;
   text-shadow: 0 2px 12px rgba(124,58,237,0.25);
 }
-
-/* ===== SPLASH HEADER (glassmorphism) ===== */
 
 .splash {
   position: fixed;
@@ -230,8 +216,6 @@ h1 {
     inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
-/* ===== CONTAINER ===== */
-
 .container {
   max-width: 90vw;
   margin: 2rem auto 2rem 0.25rem;
@@ -242,11 +226,10 @@ h1, .container, footer {
   filter: blur(5px);
 }
 
-/* ===== DETAILS / CARDS (glassmorphism) ===== */
 
 details {
   background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%),
-              var(--card);
+  var(--card);
   border-radius: 14px;
   margin-bottom: 14px;
   padding: 14px 18px;
@@ -267,7 +250,6 @@ details[open] {
     inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
-/* Scroll-reveal for cards & resource images */
 details.scroll-reveal,
 figure.scroll-reveal {
   opacity: 0;
@@ -302,8 +284,10 @@ summary::-webkit-details-marker {
 summary::before {
   content: '▸';
   display: inline-block;
+  margin: 0;
+  padding: 0;
   margin-right: 0.5rem;
-  font-size: 0.9em;
+  font-size: 1.2em;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: var(--accent-light);
 }
@@ -319,8 +303,6 @@ summary:active {
 summary:hover {
   text-shadow: 0 0 16px rgba(124,58,237,0.35);
 }
-
-/* ===== CONTENT ===== */
 
 .content {
   margin-top: 12px;
@@ -349,7 +331,6 @@ summary:hover {
   box-shadow: 0 8px 28px rgba(0,0,0,0.3);
 }
 
-/* ===== FIGURE ===== */
 figure {
   margin: 1rem 0;
   text-align: center;
@@ -363,11 +344,9 @@ figcaption {
   opacity: 0.8;
 }
 
-/* ===== FOOTER (glassmorphism) ===== */
-
 footer {
   background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%),
-              var(--card);
+  var(--card);
   padding: 1.2rem 1.8rem;
   color: var(--muted);
   font-family: 'Josefin Sans', sans-serif;
@@ -399,57 +378,6 @@ footer span {
 #apology {
   color: var(--accent);
 }
-
-/* ===== FORM ELEMENTS (glass inputs) ===== */
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-input {
-  padding: 0.7rem 1rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: var(--muted);
-  font-size: 1rem;
-  outline: none;
-  height: auto;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-
-input:focus {
-  border-color: var(--accent-light);
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 0 0 3px rgba(124,58,237,0.15), 0 4px 16px rgba(0,0,0,0.15);
-}
-
-textarea {
-  padding: 0.7rem 1rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: var(--muted);
-  font-size: 1rem;
-  resize: vertical;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-
-textarea:focus {
-  border-color: var(--accent-light);
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 0 0 3px rgba(124,58,237,0.15), 0 4px 16px rgba(0,0,0,0.15);
-}
-
-/* ===== BUTTONS (glass + glow) ===== */
 
 button {
   background: var(--notready);
@@ -492,8 +420,6 @@ button.ready:active {
   box-shadow: 0 2px 12px rgba(124,58,237,0.25);
 }
 
-/* ===== HINTS (glass tooltip) ===== */
-
 .hint {
   border-bottom: 1px dashed #888;
   cursor: pointer;
@@ -509,7 +435,7 @@ button.ready:active {
   display: none;
   position: absolute;
   background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%),
-              linear-gradient(160deg, var(--bg1), var(--bg2));
+  linear-gradient(160deg, var(--bg1), var(--bg2));
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   color: #eee;
@@ -527,7 +453,6 @@ button.ready:active {
   word-wrap: break-word;
 }
 
-/* lil arrow */
 .hint-box::before {
   content: "";
   position: absolute;
@@ -563,22 +488,6 @@ li.scroll-reveal-left.scroll-visible {
   transform: translateX(0);
 }
 
-/* ===== LINKS ===== */
-
-a {
-  color: #eee;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  transition: color 0.25s ease, text-shadow 0.25s ease;
-}
-
-a:hover {
-  color: var(--accent-light);
-  text-shadow: 0 0 10px rgba(124,58,237,0.3);
-}
-
-/* ===== MEDIA ===== */
 
 img, video {
   max-width: 80vw;
@@ -592,6 +501,19 @@ li {
 
 .wrapper {
   width: 90vw;
+}
+
+a {
+  color: #eee;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+  text-shadow: 0 0 10px rgba(124,58,237,0.3);
 }
 
 /* ===== 3D CARD CAROUSEL ===== */
@@ -702,7 +624,6 @@ li {
   animation-delay: -18s;
 }
 
-/* ===== SCROLLBAR (glass style) ===== */
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -720,8 +641,6 @@ li {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(124,58,237,0.5);
 }
-
-/* ===== SELECTION ===== */
 
 ::selection {
   background: rgba(124,58,237,0.35);
@@ -746,7 +665,7 @@ li {
   padding: 1.6rem 2rem;
   margin-bottom: 2rem;
   background: linear-gradient(135deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,.02) 100%),
-              var(--card);
+  var(--card);
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.11);
   box-shadow: 0 8px 32px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.07);
