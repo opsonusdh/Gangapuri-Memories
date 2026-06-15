@@ -51,6 +51,33 @@ html.theme-light {
   --border: #1e3b3a;
   --notready: rgba(85, 201, 255, 0.5);
 }
+
+@view-transition{
+  navigation: auto;
+}
+::view-transition-group(root){
+  animation-duration: 1s;
+}
+::view-transition-old(root){
+  animation-name: card-out;
+}
+::view-transition-new(root){
+  animation-name: card-in;
+}
+@keyframes card-out{
+  to{
+    opacity: 0;
+    transform: scale(0.5) translate(100vw);
+  }
+}
+@keyframes card-in{
+  from{
+    opacity: 0;
+    transform: scale(1.5) translate(-100vw);
+  }
+}
+
+
 *{box-sizing:border-box;}
 html,body{min-height:100%;}
 body{
