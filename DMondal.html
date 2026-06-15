@@ -16,20 +16,29 @@
   </style>
 </head>
 <body>
+  <script>
+    (function () {
+    var t = localStorage.getItem('gss-theme') || 'system';
+    if (t === 'dark')  document.documentElement.classList.add('theme-dark');
+    if (t === 'light') document.documentElement.classList.add('theme-light');
+  })();
+  </script>
   <script src="script.js"></script>
   <script>
-    /* Safe override — teacher pages have no #card-3d */
-    remove_loading = function () {
-      ['h1', 'footer', '.container'].forEach(function(sel) {
-        var el = document.querySelector(sel);
-        if (el) el.style.filter = 'none';
-      });
-      var splash = document.querySelector('.splash');
-      if (splash) splash.classList.add('shrink');
-    };
+    function remove_loading() {
+    document.querySelector("h1").style.filter = "none";
+    document.querySelector("footer").style.filter = "none";
+    document.querySelector(".container").style.filter = "none";
+    document.querySelector(".splash").classList.add("shrink");
+    document.querySelector("#themeToggle").style.filter = "none";
+}
   </script>
-
+  
+  
   <header class="splash">SDH Creation</header>
+    <button id="themeToggle" class="theme-toggle-btn" title="Theme">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.46 1.46 0 0 0 1 4v6c0 .325.078.502.145.602q.106.156.302.254a1.1 1.1 0 0 0 .352.109h13.201q.195-.049.302-.109a.76.76 0 0 0 .254-.302A1.46 1.46 0 0 0 15 10V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.1 1.1 0 0 0 14 3H2a1.1 1.1 0 0 0-.602.145"/></svg>
+  </button>
   <h1><b><u>Debasish Mondal</u></b></h1>
 
   <div class="container">
@@ -60,7 +69,7 @@
         <p>Debashish Mondal (commonly known as Deba) &#8212; the school&#8217;s self-declared thug life representative. You&#8217;ll almost never catch him walking alone; he&#8217;s always spotted chatting with some female, grinning like he just cracked the Da Vinci Code. His confidence is so unshakable it feels less like a teacher&#8217;s and more like a full-time Bollywood hero&#8217;s.</p>
         <figure>
           <img src="Data/IMG_20250816_201056.jpg" alt="Debashish Mondal">
-          <figcaption>Debasish Mondal - <span class="hint">Banglar Siksha<span class="hint-box"><a href="https://school.banglarshiksha.gov.in/ws/website/index/19170111712">Visit</a></span></span></figcaption>
+          <figcaption>Debasish Mondal</figcaption>
         </figure>
         <p>At exactly 12:30, when the girls&#8217; school disperses, you&#8217;ll often see Debashish gazing toward the gate with a mysterious smile, as if he&#8217;s waiting for destiny (or maybe just collecting gossip fuel). Students joke that he has a PhD in &#8220;window observation techniques&#8221; and could probably write a thesis on &#8220;The Movement Patterns of Schoolgirls at Noon.&#8221;</p>
         <p>In short, Debashish Sir is equal parts teacher, entertainer, and local don, making school life feel like a mix of classroom and street drama.</p>

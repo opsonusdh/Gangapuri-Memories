@@ -34,10 +34,22 @@
   </style>
 </head>    
 
-<body>   
+<body>
+  <script>
+    (function () {
+    var t = localStorage.getItem('gss-theme') || 'system';
+    if (t === 'dark')  document.documentElement.classList.add('theme-dark');
+    if (t === 'light') document.documentElement.classList.add('theme-light');
+  })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script>
+
   <script src="script.js"></script> 
   <header class="splash">SDH Creation</header>
- 
+  <button id="themeToggle" class="theme-toggle-btn" title="Theme">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.46 1.46 0 0 0 1 4v6c0 .325.078.502.145.602q.106.156.302.254a1.1 1.1 0 0 0 .352.109h13.201q.195-.049.302-.109a.76.76 0 0 0 .254-.302A1.46 1.46 0 0 0 15 10V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.1 1.1 0 0 0 14 3H2a1.1 1.1 0 0 0-.602.145"/></svg>
+  </button>
   <h1><b><u>Gangapuri Memories</u></b></h1>
   <div id="card-3d">
       <img src="Data/Gangapuri.jpg">
@@ -78,7 +90,7 @@ The current situation? Oh, we’re thriving — if by “thriving” you mean �
         </p>
         <figure>
           <video controls controlslist="nodownload" preload="none" src="Data/VID-20250826-WA0009.mp4" poster="Data/IMG_20250816_094620.jpg"></video>
-          <figcaption>2nd Floor toilet - <span class="hint">Subhradeep<span class="hint-box"><a href="https://www.instagram.com/they_hate_subho__">Visit Subhradeep on Instagram</a></span></span></figcaption>
+          <figcaption>2nd Floor toilet</figcaption>
          </figure>
         <p>Gangapuri Siksha Sadan has two sections — boys and girls — separated by walls and playground but not by curiosity. Every day at exactly 12:30, when the girls’ school disperses, the boy’s section mysteriously develops “urgent reasons” to be near the windows, purely for… <i>scenic appreciation</i>.
         </p>
@@ -283,7 +295,7 @@ The current situation? Oh, we’re thriving — if by “thriving” you mean �
 
     <figure>
       <img src="Data/739527.jpeg" alt="Chemistry Lab">
-      <figcaption>Chemistry Lab and Samarjit Mondal(looking like a robot) - <span class="hint">Banglar Siksha<span class="hint-box"><a href="https://school.banglarshiksha.gov.in/ws/website/index/19170111712">Visit</a></span></span>
+      <figcaption>Chemistry Lab and Samarjit Mondal(looking like a robot)
       </figcaption>
     </figure>
 
@@ -383,7 +395,7 @@ The current situation? Oh, we’re thriving — if by “thriving” you mean �
 
     <figure>
         <img src="Data/IMG_20250814_105457.jpg" alt="Tapan Kumar Podder">
-        <figcaption>Tapan Kumar Podder is looking out</figcaption>
+        <figcaption>Tapan Kumar Podder is looking out<br>from the Balcony</figcaption>
     </figure>
 
     <figure>
@@ -476,7 +488,7 @@ The current situation? Oh, we’re thriving — if by “thriving” you mean �
 
     <figure>
       <video controls controlslist="nodownload" preload="none" src="Data/VID-20250813-WA0003.mp4" poster="Data/IMG_20250816_094620.jpg"></video>
-      <figcaption>Capturing Harishankar Giri
+      <figcaption>Capturing Harishankar Giri on the way to home
       </figcaption>
     </figure>
 
