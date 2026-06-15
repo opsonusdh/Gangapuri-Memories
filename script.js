@@ -166,6 +166,246 @@ function applyTheme(theme) {
   if (btn) btn.innerHTML = ICONS[theme];
 }
 
+function initScrollRibbon() {
+  if (document.getElementById("scrollRibbonCanvas")) return;
+
+  const canvas = document.createElement("canvas");
+  canvas.id = "scrollRibbonCanvas";
+  canvas.setAttribute("aria-hidden", "true");
+  document.body.prepend(canvas);
+
+  const ctx = canvas.getContext("2d", { alpha: true });
+
+  const state = {
+    w: 0,
+    h: 0,
+    dpr: Math.min(1.5, window.devicePixelRatio || 1),
+    target: 0,
+    view: 0,
+    guide: [],
+    running: false,
+    reduced: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  };
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  function hash(n) {
+    const s = Math.sin(n * 127.1 + 311.7) * 43758.5453123;
+    return s - Math.floor(s);
+  }
+
+  function smoothstep(t) {
+    return t * t * (3 - 2 * t);
+  }
+
+  function noise1D(x) {
+    const i = Math.floor(x);
+    const f = x - i;
+    const a = hash(i);
+    const b = hash(i + 1);
+    return lerp(a, b, smoothstep(f));
+  }
+
+  function fbm(x) {
+    let value = 0;
+    let amplitude = 0.5;
+    let frequency = 1;
+
+    for (let i = 0; i < 4; i++) {
+      value += amplitude * (noise1D(x * frequency) - 0.5);
+      frequency *= 2;
+      amplitude *= 0.5;
+    }
+
+    return value;
+  }
+
+  function catmullRom(p0, p1, p2, p3, t) {
+    const t2 = t * t;
+    const t3 = t2 * t;
+    return 0.5 * (
+      2 * p1 +
+      (-p0 + p2) * t +
+      (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2 +
+      (-p0 + 3 * p1 - 3 * p2 + p3) * t3
+    );
+  }
+
+  function maxScroll() {
+    return Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  }
+
+  function resizeCanvas() {
+    state.w = window.innerWidth;
+    state.h = window.innerHeight;
+    state.dpr = Math.min(1.5, window.devicePixelRatio || 1);
+
+    canvas.width = Math.floor(state.w * state.dpr);
+    canvas.height = Math.floor(state.h * state.dpr);
+    ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+
+    buildGuide();
+  }
+
+  function buildGuide() {
+    const count = Math.max(12, Math.round(state.h / 120));
+    const maxX = state.w * 0.74;
+
+    state.guide = [];
+
+    for (let i = 0; i <= count; i++) {
+      const t = i / count;
+
+      const envelope = Math.pow(Math.sin(Math.PI * t), 0.95);
+      const midBend = Math.exp(-Math.pow((t - 0.52) / 0.18, 2));
+      const longWave = Math.sin(t * Math.PI * 2.1 + 0.55);
+      const midWave = Math.sin(t * Math.PI * 5.7 + 1.8);
+      const shortWave = Math.sin(t * Math.PI * 11.0 + 0.25);
+      const random = (fbm(t * 5.0 + 3.4) - 0.5) * 2;
+
+      const base = maxX * t;
+      const meander =
+        0.48 * longWave +
+        0.26 * midWave +
+        0.12 * shortWave +
+        0.18 * random;
+
+      const strongMiddleTurn = midBend * (
+        0.72 * Math.sin(t * Math.PI * 2.0 + 1.15) +
+        0.32 * Math.sin(t * Math.PI * 4.0 + 0.3)
+      );
+
+      const x =
+        base * (1 - 0.15 * (1 - Math.pow(t, 0.75))) +
+        envelope * state.w * 0.16 * meander +
+        midBend * state.w * 0.28 * strongMiddleTurn;
+
+      state.guide.push({ t, x: clamp(x, 0, state.w - 18) });
+    }
+
+    if (state.guide.length) {
+      state.guide[0].x = 0;
+    }
+  }
+
+  function guideX(p) {
+    const pts = state.guide;
+    if (!pts.length) return 0;
+
+    const last = pts.length - 1;
+    const scaled = clamp(p, 0, 1) * last;
+    const i = Math.floor(scaled);
+    const t = scaled - i;
+
+    const i0 = Math.max(0, i - 1);
+    const i1 = i;
+    const i2 = Math.min(last, i + 1);
+    const i3 = Math.min(last, i + 2);
+
+    return catmullRom(
+      pts[i0].x,
+      pts[i1].x,
+      pts[i2].x,
+      pts[i3].x,
+      t
+    );
+  }
+
+  function pointAtProgress(p) {
+    return {
+      x: guideX(p),
+      y: clamp(p, 0, 1) * state.h
+    };
+  }
+
+  function updateTarget() {
+    state.target = clamp(window.scrollY / maxScroll(), 0, 1);
+    requestRender();
+  }
+
+  function requestRender() {
+    if (!state.running) {
+      state.running = true;
+      requestAnimationFrame(tick);
+    }
+  }
+
+  function drawRibbon(progress) {
+    ctx.clearRect(0, 0, state.w, state.h);
+
+    const clamped = clamp(progress, 0, 1);
+    const segments = Math.max(40, Math.round(40 + clamped * 50));
+    const points = new Array(segments + 1);
+
+    for (let i = 0; i <= segments; i++) {
+      points[i] = pointAtProgress((i / segments) * clamped);
+    }
+
+    if (points.length < 2) return;
+
+    for (let i = 1; i < points.length; i++) {
+      const age = i / (points.length - 1);
+      const alpha = Math.pow(age, 2.25);
+
+      const p0 = points[i - 1];
+      const p1 = points[i];
+
+      ctx.beginPath();
+      ctx.moveTo(p0.x, p0.y);
+      ctx.lineTo(p1.x, p1.y);
+      ctx.strokeStyle = `rgba(255, 208, 145, ${alpha})`;
+      ctx.lineWidth = 1.8 + age * 1.6;
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
+
+    const head = points[points.length - 1];
+    const halo = ctx.createRadialGradient(head.x, head.y, 2, head.x, head.y, 18);
+    halo.addColorStop(0, "rgba(255, 207, 138, 0.10)");
+    halo.addColorStop(0.45, "rgba(255, 157, 57, 0.05)");
+    halo.addColorStop(1, "rgba(255, 157, 57, 0)");
+
+    ctx.beginPath();
+    ctx.arc(head.x, head.y, 18, 0, Math.PI * 2);
+    ctx.fillStyle = halo;
+    ctx.fill();
+  }
+
+  function tick() {
+    if (state.reduced) {
+      state.view = state.target;
+    } else {
+      const diff = state.target - state.view;
+      const speed = clamp(0.12 + Math.abs(diff) * 0.38, 0.10, 0.32);
+      state.view += diff * speed;
+    }
+
+    drawRibbon(state.view);
+
+    const active = Math.abs(state.target - state.view) > 0.0008;
+    if (active) {
+      requestAnimationFrame(tick);
+    } else {
+      state.running = false;
+    }
+  }
+
+  window.addEventListener("resize", () => {
+    resizeCanvas();
+    updateTarget();
+  }, { passive: true });
+
+  window.addEventListener("scroll", updateTarget, { passive: true });
+
+  window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener?.("change", (e) => {
+    state.reduced = e.matches;
+    updateTarget();
+  });
+
+  resizeCanvas();
+  updateTarget();
+}
 
 window.onload = function () {
   let currentTheme = localStorage.getItem(THEME_KEY);
@@ -182,6 +422,7 @@ window.onload = function () {
   })
   setTimeout(() => {
     remove_loading();
+    initScrollRibbon();
     init_scroll_reveal();
   }, 500);
 };
