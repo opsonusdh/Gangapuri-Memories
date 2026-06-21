@@ -1,4 +1,4 @@
-© 2025 Gangapuri Memories. All rights reserved.
+© 2025-2026 Gangapuri Memories. All rights reserved.
 
 This project and its content are the property of the Gangapuri community. No part of this project may be copied, reproduced, distributed, or transmitted in any form without prior written permission of the project owner.
 
